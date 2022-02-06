@@ -1,0 +1,64 @@
+Funcionalidade: Cadastro de usuários
+
+EU COMO usuário do sistema.
+DESEJO realizar o cadastro de novos usuários.
+PARA QUE seja possível armazenar e gerenciar seus dados.
+
+Cenário: Preenchimento da tela de cadastro de novos usuários
+ Quando eu faço o preenchimento da tela de cadastro de novos usuários:
+   |Nome           |E-mail                |Senha   |
+   |João da Silva  |joao.silva@email.com  |********|
+ Então clique no botão Cadastrar.
+
+
+Cenário: Preenchimento da tela de cadastro sem o campo Nome
+ Quando eu faço o preenchimento da tela de cadastro e o campo Nome fica vazio:
+   |Nome           |E-mail                |Senha   |
+   |               |joao.silva@email.com  |********|
+ Então ao clicar em cadastrar, informar que o campo Nome é obrigatório.
+
+
+Cenário: Preenchimento da tela de cadastro sem o campo E-mail
+ Quando eu faço o preenchimento da tela de cadastro e o campo E-mail fica vazio:
+   |Nome           |E-mail                |Senha   |
+   |João da Silva  |                      |********|
+ Então ao clicar em cadastrar, informar que o campo E-mail é obrigatório.
+
+
+Cenário: Sem preenchimento dos campos
+ Quando eu clico em cadastrar com os campos vazios:
+   |Nome           |E-mail                |Senha   |
+   |               |                      |        |
+ Então ao clicar em cadastrar, informar que o campo Nome, E-mail e Senha é obrigatório.
+
+
+Cenário: Prenchimento do campo Nome incompleto
+ Quando eu preencho o campo nome incompleto
+   |Nome           |E-mail                |Senha   |
+   |João           |joao.silva@email.com  |********|
+ Então ao clicar em cadastrar, informar que o campo Nome deve ser completo.
+
+
+Cenário: Prenchimento do campo E-mail inválido
+ Quando eu preencho o campo nome incompleto
+   |Nome           |E-mail                |Senha   |
+   |João Silva     |email exemplo.com     |********|
+ Então ao clicar em cadastrar, informar para inserir um E-mail válido.
+
+
+Cenário: Prenchimento do campo senha inválido
+ Quando eu preencho o campo nome incompleto
+   |Nome           |E-mail                |Senha  |
+   |João Silva     |email exemplo.com     |*******|
+ Então ao clicar em cadastrar, informar que a senha deve conter ao menos 8 caracteres.
+
+
+Cenário: Prenchimento de todos os campos corretamente
+ Quando eu preencho os campos corretamente
+   |Nome           |E-mail                |Senha   |
+   |João da Silva  |joao.silva@email.com  |********|
+ Então clique no botão cadastrar e aparecerá os dados do usuário cadastrado.
+
+
+                                      
+                                                                   
